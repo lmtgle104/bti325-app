@@ -68,7 +68,7 @@ blogService
   })
   .catch(function(err){
     console.log("Unable to open file: "+ err);
-  })
+  });
 
 
   // start the server on the port and output a confirmation ot the console
