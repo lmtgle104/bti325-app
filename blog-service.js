@@ -7,7 +7,7 @@ var posts = [];
 var categories = [];
 
 //initialize()
-//•    This function will read the contents of the "./data/posts.json" and "./data/categories.json" file
+//•	This function will read the contents of the "./data/posts.json" and "./data/categories.json" file
 
 initialize = function () {
   return new Promise((resolve, reject) => {
@@ -73,13 +73,3 @@ module.exports = {
   getPublishedPosts,
   getCategories,
 };
-
-/*
-function test(){
-
-  const file =  getAllPosts();
-  console.log("running the function: ", file);
-}
-
-
-test();*/ 
