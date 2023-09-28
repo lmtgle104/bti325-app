@@ -45,10 +45,6 @@ app.get("/blog", (req, res) => {
         console.log("Unable to open the file: " + err);
       });
   });
-  
-  app.get("*", (req, res) => {
-    res.status(404).sendFile(__dirname + "/views/404/error.html");
-  });
 
  app.get("/categories", (req, res) => {
     blogService
@@ -60,6 +56,20 @@ app.get("/blog", (req, res) => {
         console.log("Unable to open the file: " + err);
       });
   });
+  
+  app.get("*", (req, res) => {
+    res.status(404).sendFile(__dirname + "/views/404/error.html");
+  });
+
+blogService
+.initialize()
+.then(function(){
+  app.listen(HTTP_PORT, () => console.log(`Express http server listening on: ${HTTP_PORT}`));
+  })
+  .catch(function(err){
+    console.log("Unable to open file: "+ err);
+  })
+
 
   // start the server on the port and output a confirmation ot the console
 app.listen(HTTP_PORT, () => console.log(`Express http server listening on: ${HTTP_PORT}`));
