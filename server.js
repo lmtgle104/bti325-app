@@ -23,8 +23,6 @@ app.get("/about", (req, res) =>{
 });
 app.use(express.static('public'));
 
-// start the server on the port and output a confirmation ot the console
-app.listen(HTTP_PORT, () => console.log(`Express http server listening on: ${HTTP_PORT}`));
 
 app.get("/blog", (req, res) => {
     blogService 
@@ -64,6 +62,6 @@ app.get("/blog", (req, res) => {
   });
 
 
-  
-
+  // start the server on the port and output a confirmation ot the console
+app.listen(HTTP_PORT, () => console.log(`Express http server listening on: ${HTTP_PORT}`));
  
